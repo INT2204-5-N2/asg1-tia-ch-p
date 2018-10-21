@@ -3,7 +3,7 @@ package dictionary;
 
 /**
  *
- * @author Tu Nguyen
+ * @author Tu vs Tung
  */
 public class Word {
 

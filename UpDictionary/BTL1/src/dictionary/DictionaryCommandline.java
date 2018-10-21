@@ -7,7 +7,8 @@ package dictionary;
 
 /**
  *
- * @author Tu Nguyen
+ * @author Tu vs Tung
+
  */
 public class DictionaryCommandline extends DictionaryManagement{
     public static DictionaryManagement DM=new DictionaryManagement();

@@ -8,7 +8,7 @@ package dictionary;
 
 /**
  *
- * @author Tu Nguyen
+ * @author Tu vs Tung
  */
 public class Main {
     public static DictionaryCommandline DC=new DictionaryCommandline();

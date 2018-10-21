@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Tu Nguyen
+ * @author Tu vs Tung
  */
 public class DictionaryManagement {
         
