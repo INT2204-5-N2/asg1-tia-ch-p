@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dictionary;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- *
- * @author Tu vs Tung
- */
 public class DictionaryManagement {
-        
         protected static LinkedList<Word> arr ;
 	public static Scanner sr = new Scanner(System.in);
 	public DictionaryManagement() {
@@ -115,7 +107,10 @@ public class DictionaryManagement {
 		}
             Word obj = new Word(word,mean);
             arr.add(obj);
+            Collections.sort(arr, new NameComparator());
             return true;
+            
+            
         }
         public void save(){
                 try(PrintWriter pw=new PrintWriter(f)){
@@ -126,7 +121,8 @@ public class DictionaryManagement {
                 }
         }
         public LinkedList<Word> filterWord(String subs){
-          LinkedList<Word> ar = new LinkedList<>();
+            LinkedList<Word> ar = new LinkedList<>();
+            
             if (subs.equals("")){
                 for (int i =0;i<200;i++){
                    ar.add(arr.get(i));
@@ -136,10 +132,17 @@ public class DictionaryManagement {
                 for (int i =0;i<arr.size();i++){
                            if (subs.length()<=arr.get(i).getWord().length()&& arr.get(i).getWord().substring(0, subs.length()).equals(subs))
                            { ar.add(arr.get(i)); 
-                               k++;
+                             k++;
                               if (k==20) break;}
                         } 
+                       
+                
                  }
             return ar;
         }
+}
+class NameComparator implements Comparator<Word> {
+	public int compare(Word s1, Word s2) {
+		return s1.getWord().compareTo(s2.getWord());
+	}
 }
