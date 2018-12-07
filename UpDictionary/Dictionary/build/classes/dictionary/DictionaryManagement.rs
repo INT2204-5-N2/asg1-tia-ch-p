@@ -1,2 +1,0 @@
-dictionary.NameComparator
-dictionary.DictionaryManagement
